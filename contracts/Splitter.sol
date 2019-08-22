@@ -1,4 +1,4 @@
-pragma solidity ^0.4.4;
+pragma solidity ^0.5.0;
 
 import './Destroyable.sol';
 import './Stoppable.sol';
@@ -16,7 +16,7 @@ contract Splitter is Destroyable, Stoppable {
   event LogSendMoneyToThirdAcc(uint);
   event LogCurrentAmount(uint);
 
-  constructor(address address1,address address2, address address3)  {
+  constructor(address address1,address address2, address address3) public  {
     require(address1 != 0);
     require(address2 != 0);
     require(address3 != 0);

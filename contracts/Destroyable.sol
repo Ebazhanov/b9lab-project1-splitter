@@ -1,10 +1,9 @@
-pragma solidity 0.4.4;
+pragma solidity ^0.5.0;
+import "./OwnableI.sol";
 
-import "./Ownable.sol";
+contract Destroyable is OwnableI {
 
-contract Destroyable is Ownable {
-
-  function destroy() onlyOwner public {
+  function destroy(address owner) onlyOwner public {
     selfdestruct(owner);
   }
 }
